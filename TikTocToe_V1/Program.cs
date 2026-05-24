@@ -16,7 +16,7 @@ namespace TikTocToe_V1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TikTokToe());
+            Application.Run(new TikTocToe());
         }
     }
 }
