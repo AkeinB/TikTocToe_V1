@@ -28,6 +28,7 @@ namespace TikTocToe_V1
             _Player2 = "O";
             _CurrentPlayer = null;
             win = false;
+            //audio files are added to bin/debug folder and called in the code using the SoundPlayer class
             selectSound = new SoundPlayer("selectionbeep.wav");
             wrongSelectionSound = new SoundPlayer("wrongselectionbeep.wav");
             BgMusic = new SoundPlayer("BG Music.wav");
