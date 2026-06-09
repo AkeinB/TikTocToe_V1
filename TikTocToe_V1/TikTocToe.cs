@@ -8,6 +8,7 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NAudio.Wave;
 
 
 namespace TikTocToe_V1
@@ -32,7 +33,6 @@ namespace TikTocToe_V1
             selectSound = new SoundPlayer("selectionbeep.wav");
             wrongSelectionSound = new SoundPlayer("wrongselectionbeep.wav");
             BgMusic = new SoundPlayer("BG Music.wav");
-            BgMusic.PlayLooping();
         }
 
         private void TikTokToe_Load(object sender, EventArgs e)
@@ -322,8 +322,18 @@ namespace TikTocToe_V1
             //if win conditions are met, display a message box and reset the game board
             if (win)
             {
-                MessageBox.Show($"{_CurrentPlayer} Wins!");
+                BgMusic.Play();
+                if(_CurrentPlayer == _Player1)
+                {
+                    MessageBox.Show("Player 1 Wins!");
+                }
+                else
+                {
+                    MessageBox.Show("Player 2 Wins!");
+                }
+                
                 RestBoard();
+                BgMusic.Stop();
             }
             
         }
